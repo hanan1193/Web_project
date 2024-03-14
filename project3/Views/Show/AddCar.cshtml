@@ -1,0 +1,73 @@
+﻿@model Car
+
+@{
+    ViewData["Title"] = "Cars site ";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CarsSite</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/project3.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="logo">
+                <img src="~/css/logo.png" />
+            </div>
+            <div class="links ">
+                <a class="bts btt" asp-area="" asp-controller="Home" asp-action="Index">Home page</a>
+
+
+
+                <a class="bts btt" asp-area="" asp-controller="Cars" asp-action="CarsList">Cars List</a>
+                <a class="bts btt" asp-area="" asp-controller="Show" asp-action="Show">Show details</a>
+                <a class="bts btt" asp-area="" asp-controller="Login" asp-action="Logout">Log out</a>
+
+
+
+
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <div class="text-center">
+           
+                <form method="post" asp-action="AddCar" asp-controller="Show " class="contant">
+                    <input  asp-for="UserId" type="hidden" value=@ViewBag.userid/>
+                   <input asp-for="CarId" type="hidden" />  
+
+                    <input placeholder=" Enter Type" asp-for="Type" />
+                    <input placeholder="Enter Model" asp-for="Model" />
+                    <input placeholder="Enter color" asp-for="Color" />
+                    <input placeholder="Enter Price" asp-for="Price" />
+                    <input type="submit" value="Add" />
+                </form>
+               
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted fofo">
+        <div class="container">
+            &copy; 2024 - Cars4sales - <a>Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
+

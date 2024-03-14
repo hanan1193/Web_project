@@ -1,0 +1,70 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Cars site ";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CarsSite</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/project3.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar ">
+            <div class="logo">
+                <img src="~/css/logo.png" />
+            </div>
+            <div class="links">
+                <a class="bts" asp-area="" asp-controller="Home" asp-action="Index">Home page</a>
+
+
+
+
+                <a class="bts" asp-area="" asp-controller="Cars" asp-action="CarsList">Cars List</a>
+             
+                <a class="bts" asp-area="" asp-controller="Login" asp-action="Logout">Log out</a>
+
+
+
+
+            </div>
+
+        </nav>
+    </header>
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4">
+                Welcome <span class="ww"> @Model.Name </span> 
+            </h1>
+            <p>your details :</p>
+           <div>
+                <p>Your name is :<span class="ww">@Model.Name</span></p>
+                <p >Your Email is: <span class="ww">@Model.Email</span></p>
+                <a asp-controller="Show" asp-action="ShowCars" class="change">Show your cars</a>
+                <br/>
+                <a asp-controller="Show" asp-action="Change" class="change">Chang your password</a>
+           </div>
+        </div>
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Cars4sales - <a>Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
+
